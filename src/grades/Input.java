@@ -36,17 +36,21 @@ public class Input {
         return getString();
     }
 
-    public boolean yesNo(){
-        System.out.println("Want to continue? (y/n)");
+    private boolean yesNo(){
+        //System.out.println("Want to continue? (y/n)");
         String answer =this.scanner.nextLine();
         return answer.equalsIgnoreCase("y") || answer.equalsIgnoreCase("yes");
 
-//
-//        if ((scanner.nextLine().equalsIgnoreCase("y") || (scanner.nextLine().equalsIgnoreCase("yes") ))) {
-//            return true;
-//        } else {
-//            return false;
-//        }
+    }
+
+    public boolean yesNo(String prompt){
+        if (prompt.isEmpty()) {
+        System.out.println("Want to continue? (y/n)");}
+        else {
+            System.out.println(prompt);
+        }
+        return yesNo();
+
 
     }
 
