@@ -41,7 +41,7 @@ public class Student {
             totalGrades += grade;
 
         }
-        System.out.println("totalGrades = " + totalGrades);
+        //System.out.println("totalGrades = " + totalGrades);
         return totalGrades / this.grades.size();
     }
 
