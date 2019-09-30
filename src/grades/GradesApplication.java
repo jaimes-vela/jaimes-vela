@@ -1,6 +1,7 @@
 package grades;
 
 import java.util.HashMap;
+import java.util.InputMismatchException ;
 
 /**
  * Create a map for students and GitHub usernames
@@ -42,21 +43,43 @@ public class GradesApplication {
 
         Student currentStudent;
 
-        System.out.println("Keys");
-        for(String key : students.keySet()) {
-            System.out.println("student = " + students.get(key));
-            currentStudent = students.get(key);
-            System.out.println("currentStudent.getName() = " + currentStudent.getName());
-            System.out.println("currentStudent.getGradeAverage() = " + currentStudent.getGradeAverage());
+//        System.out.println("Keys");
+//        for(String key : students.keySet()) {
+////            System.out.println("student = " + students.get(key));
+//            currentStudent = students.get(key);
+//            System.out.println("currentStudent.getName() = " + currentStudent.getName());
+//            System.out.println("currentStudent.getGradeAverage() = " + currentStudent.getGradeAverage());
+//
+//        }
+//
+//        System.out.println("Val");
+//        for(Student val : students.values()) {
+////            System.out.println("val = " + val);
+//            System.out.println("val.getName() = " + val.getName());
+//            System.out.println("val.getGradeAverage() = " + val.getGradeAverage());
 
+//        }
+        System.out.println("Here are the GitHub usernames of our students:\n" +
+                "\n ");
+        for (String key : students.keySet()) {
+            System.out.println(key);
         }
 
-        System.out.println("Val");
-        for(Student val : students.values()) {
-            System.out.println("val = " + val);
-            System.out.println("val.getName() = " + val.getName());
-            System.out.println("val.getGradeAverage() = " + val.getGradeAverage());
 
+
+        Input keyboard = new Input();
+        String answer = keyboard.getString();
+//        System.out.println(answer);
+//            System.out.println(students.containsKey(answer));
+
+        if(students.containsKey(answer)) {
+            System.out.println(students.get(answer).getName());
+            students.get(answer).printGrades();
+//            System.out.println(students.get(answer).getGradeAverage());
+        } else {
+            System.out.println("No student found.");
         }
+
+
     }
 }
